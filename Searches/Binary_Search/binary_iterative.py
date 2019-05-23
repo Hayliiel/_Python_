@@ -7,7 +7,6 @@
  The function returns if the element was found or not and
  the position of it (if it was found)
 
- TODO: Tests
 """
 
 def binary_iterative(element, list_1):
@@ -21,7 +20,7 @@ def binary_iterative(element, list_1):
 		mid = int((upper + lower) / 2)
 
 		if element == list_1[mid]: # Checks if the element is on the middle of the list
-			print("Element found in position", mid)
+			#print("Element found in position", mid)
 			return mid
 		
 		elif element < list_1[mid]: # Checks if the element is lower than the middle of the list
@@ -33,7 +32,10 @@ def binary_iterative(element, list_1):
 	print("Element not found")
 	return
 
+
+
 number_list = [1, 2, 3, 4, 5, 12, 8, 27, 30, 66, 34, 123]
+word_list = ["something", "ohno", "wait", "something123", "test", "tesdcwe"]
 
 binary_iterative(4, number_list)
 binary_iterative(5, number_list)
@@ -44,3 +46,13 @@ binary_iterative(7, number_list)
 binary_iterative(22, number_list)
 binary_iterative(32, number_list)
 binary_iterative(14, number_list)
+
+binary_iterative("test", word_list)
+binary_iterative("tesdcwe", word_list)
+binary_iterative("ohno", word_list)
+binary_iterative("something123", word_list)
+
+binary_iterative("testt", word_list)
+binary_iterative("nope", word_list)
+binary_iterative("qscqwe", word_list)
+binary_iterative("123", word_list)
