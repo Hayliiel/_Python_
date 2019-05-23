@@ -10,7 +10,8 @@
  program because the recursion limit was reached, it happens only when
  the element is not on the list for some reason, i've searched a bit
  and it seems that python do not optimize tail recursion and that limit
- is to prevent stack overflows.
+ is to prevent stack overflows. This error can be fixed with sys commands
+ but i rather not do it.
 
  It seems recursion is not worth it on python.
 
@@ -23,7 +24,7 @@ def binary_recursive(element,list_1,lower, upper):
 	mid = int((upper + lower) / 2)
 	
 	if element == list_1[mid]: # Checks if the element is on the middle of the list
-		print("Element found in position", mid)
+		#print("Element found in position", mid)
 		return mid
 
 	elif element < list_1[mid]: # Checks if the element is lower than the middle of the list
@@ -34,20 +35,32 @@ def binary_recursive(element,list_1,lower, upper):
 
 	#print("Element not found")
 	return -1
+""" Test
+def main():
 
-number_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-word_list = ["something", "ohno", "wait", "something123", "test", "tesdcwe"]
+	number_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+	word_list = ["something", "ohno", "wait", "something123", "test", "tesdcwe"]
 
-binary_recursive(1, number_list, 0, len(number_list))
-binary_recursive(6, number_list, 0, len(number_list))
-binary_recursive(15, number_list, 0, len(number_list))
-binary_recursive(20, number_list, 0, len(number_list))
+	binary_recursive(1, number_list, 0, len(number_list))
+	binary_recursive(6, number_list, 0, len(number_list))
+	binary_recursive(15, number_list, 0, len(number_list))
+	binary_recursive(20, number_list, 0, len(number_list))
 
-binary_recursive("something", word_list, 0, len(word_list))
-binary_recursive("wait", word_list, 0, len(word_list))
-binary_recursive("test", word_list, 0, len(word_list))
-binary_recursive("tesdcwe", word_list, 0, len(word_list))
+	#binary_recursive(0, number_list, 0, len(number_list)) # Error, python recursion limit reached
+	#binary_recursive(22, number_list, 0, len(number_list)) # Error, python recursion limit reached
+	#binary_recursive(37, number_list, 0, len(number_list)) # Error, python recursion limit reached
+	#binary_recursive(40, number_list, 0, len(number_list)) # Error, python recursion limit reached
 
+	binary_recursive("something", word_list, 0, len(word_list))
+	binary_recursive("wait", word_list, 0, len(word_list))
+	binary_recursive("test", word_list, 0, len(word_list))
+	binary_recursive("tesdcwe", word_list, 0, len(word_list))
 
+	#binary_recursive("testeas", word_list, 0, len(word_list)) # Error, python recursion limit reached
+	#binary_recursive("ohyes", word_list, 0, len(word_list)) # Error, python recursion limit reached
+	#binary_recursive("zxcas", word_list, 0, len(word_list)) # Error, python recursion limit reached
+	#binary_recursive("hum", word_list, 0, len(word_list)) # Error, python recursion limit reached
 
-
+if __name__ == "__main__":
+	main()
+"""
