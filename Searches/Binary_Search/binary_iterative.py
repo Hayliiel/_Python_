@@ -13,17 +13,16 @@
 def binary_iterative(element, list_1):
 
 	list_1.sort() # It sorts the list_1 since binary search only works on ordered lists
-	print(list_1)
 	lower = 0
-	upper = len(list_1)
+	upper = len(list_1) - 1
 
 	while lower <= upper:
 
-		mid = int((upper - lower) / 2)
+		mid = int((upper + lower) / 2)
 
 		if element == list_1[mid]: # Checks if the element is on the middle of the list
 			print("Element found in position", mid)
-			return
+			return mid
 		
 		elif element < list_1[mid]: # Checks if the element is lower than the middle of the list
 			upper = mid - 1
@@ -34,3 +33,14 @@ def binary_iterative(element, list_1):
 	print("Element not found")
 	return
 
+number_list = [1, 2, 3, 4, 5, 12, 8, 27, 30, 66, 34, 123]
+
+binary_iterative(4, number_list)
+binary_iterative(5, number_list)
+binary_iterative(12, number_list)
+binary_iterative(8, number_list)
+
+binary_iterative(7, number_list)
+binary_iterative(22, number_list)
+binary_iterative(32, number_list)
+binary_iterative(14, number_list)
