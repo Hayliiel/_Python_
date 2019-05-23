@@ -2,7 +2,7 @@
 
 """
 
- This function is the basic binary search, it receives an element
+ This function is the iterative binary search, it receives an element
  and a list_1 where it will search for the desired element.
  The function returns if the element was found or not and
  the position of it (if it was found)
@@ -29,8 +29,8 @@ def binary_iterative(element, list_1):
 		else: # If the element isn't lower or equal to the middle, its higher. (Or is not on the list)
 			lower = mid + 1
 
-	print("Element not found")
-	return
+	#print("Element not found")
+	return -1
 
 
 
