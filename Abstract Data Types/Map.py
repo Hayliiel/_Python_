@@ -19,11 +19,23 @@ class Map:
 		result = Mapping(key, element)
 		self.element_list.append(result)
 
+	def add_many(self):
+		print("How many elements do you want to add")
+		quantity = input("--> ")
+
+		for x in (range(0, quantity)):
+			print("Add the element")
+			key = input("Key: ")
+			value = input("Value: ")
+			
+			element = Mapping(key,value)
+			self.element_list.apped(element)
+
 	def reassign(self, key, element):
 		try:
 			self.element_list[key].set_value(element)
 
-		except (IndexError,ValueError)
+		except (IndexError,ValueError):
 			print("Key not found")
 
 	def delete(self, key, element):
@@ -39,4 +51,12 @@ class Map:
 
 		except IndexError:
 			print("Key not found")
+
+
+def main():
+	
+
+
+if __name__ == '__main__':
+	main()
 
