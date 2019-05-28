@@ -68,8 +68,9 @@ class Container:
 			print("Element found at index: ", index)
 			print("The element is: ", self.elements_list[index])
 
-	def size(self): # Prints the size of the list
+	def size(self): # Prints the size of the list, returns the size
 		print("This container have", len(self.elements_list), "elements")
+		return len(self.elements_list)
 
 	def delete_index(self, index): # Deletes an element based on the index
 		try:

@@ -30,7 +30,7 @@ class Map: # Class used to represent the map
 
 	def add_many(self): # Adds X elements to the map
 		print("How many elements do you want to add")
-		quantity = input("--> ")
+		quantity = int(input("--> "))
 
 		for x in (range(0, quantity)):
 			print("Add the element")
@@ -51,30 +51,67 @@ class Map: # Class used to represent the map
 	def delete(self, key): # Deletes an element from the map based on given key
 		try:
 			self.element_list.pop(self.keys_list.index(key))
-			self.keys_list.pop(key)
+			self.keys_list.pop(self.keys_list.index(key))
 
-		except IndexError:
+		except (ValueError, IndexError):
 			print("Key not found")
 
-	def lookup(self, key): # Acess any element on the map based on given key
+	def lookup(self, key): # Acess any element on the map based on given key, returns the searched element(If found)
 		try:
 			return self.element_list[self.keys_list.index(key)].get_value()
 
-		except IndexError:
+		except (ValueError, IndexError):
 			print("Key not found")
+
+	def print(self): # Prints all keys stored within the map
+		if not self.keys_list:
+			print("Empty!")
+		else:
+			print(self.keys_list)
+
+	def size(self): # Prints the size of the map, returns the size
+		print("This map have", len(self.element_list), "keys")
+		return len(self.element_list)
 
 	def clear(self): # Erases the whole list
 		self.element_list.clear()
 		self.keys_list.clear()
 
 
-
 def main():
 	test_map = Map()
-	test_map.add("numero", 1234)
-	test_map.lookup("numero")
-	
+	test_map.add("number", 998652254)
+	print(test_map.lookup("number"))
+	print(test_map.lookup("numberr"))
 
+	test_map.add("regions", 9)
+	test_map.add("people", 2000000)
+	test_map.add("cities", 27)
+
+	test_map.add_many()
+
+	test_map.size()
+	test_map.print()
+
+	test_map.reassign("regions", 4)
+	test_map.reassign("people", 2005367)
+
+	test_map.reassign("ciities", 20)
+	test_map.reassign("none", 1230)
+
+	print(test_map.lookup("regions"))
+	print(test_map.lookup("people"))
+	test_map.print()
+
+	test_map.delete("number")
+	test_map.delete("people")
+
+	test_map.delete("something")
+	test_map.delete("SoMeThInG")
+	test_map.print()
+
+	test_map.clear()
+	test_map.print()
 
 if __name__ == '__main__':
 	main()
