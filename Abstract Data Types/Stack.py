@@ -38,6 +38,7 @@ class Stack:
 	def push(self, element):
 		try:
 			new_node = Linked_Node(element, self.__element_list[0])
+			self.__element_list.insert(0, new_node)
 			return element
 
 		except TypeError:
@@ -51,6 +52,7 @@ def main():
 	linked_list = [node1, node2, node3]
 	stack = Stack(linked_list)
 	stack.fix_list()
+	stack.push(4)
 
 	print(stack.get_list())
 	print(stack.get_nexts())
