@@ -35,7 +35,13 @@ class Stack:
 			if x + 1 < len(self.__element_list):
 				self.__element_list[x].next_node = self.__element_list[x + 1]
 
-	
+	def push(self, element):
+		try:
+			new_node = Linked_Node(element, self.__element_list[0])
+			return element
+
+		except TypeError:
+			print("Invalid Push")
 
 def main():
 	node1 = Linked_Node(1)
