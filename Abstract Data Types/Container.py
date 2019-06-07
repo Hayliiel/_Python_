@@ -35,17 +35,17 @@ class Container:
 	def __init__(self): # Default constructor
 		self.elements_list = []
 
-	def print(self): # Prints the whole lists, prints "Empty!" if the list is empty
+	def print(self): # Prints the whole container, prints "Empty!" if the list is empty
 		if len(self.elements_list) == 0:
 			print("Empty! )=")
 
 		else:
 			print(self.elements_list)
 
-	def insert(self, element): # Inserts the desired element on the list
+	def insert(self, element): # Inserts the desired element on the container
 		self.elements_list.append(element)
 
-	def insert_many(self): # Inserts X elements on the list
+	def insert_many(self): # Inserts X elements on the container
 		try:
 			print("How many elements do you want to insert")
 			quantity = int(input("--> "))
@@ -58,7 +58,7 @@ class Container:
 		except (TypeError, ValueError):
 			print("Please insert a number")
 
-	def see(self, element): # Searchs an element on the list and returns it's index and what is it (If found)
+	def see(self, element): # Searchs an element on the container and returns it's index and what is it (If found)
 		index = binary_iterative(element, self.elements_list)
 
 		if index == False:
@@ -68,7 +68,7 @@ class Container:
 			print("Element found at index: ", index)
 			print("The element is: ", self.elements_list[index])
 
-	def size(self): # Prints the size of the list, returns the size
+	def size(self): # Prints the size of the container, returns the size
 		print("This container have", len(self.elements_list), "elements")
 		return len(self.elements_list)
 
@@ -86,7 +86,7 @@ class Container:
 		except ValueError:
 			print("Element not found")
 
-	def clear(self): # Erases the whole list
+	def clear(self): # Erases the whole container
 		self.elements_list.clear()
 
 

@@ -2,8 +2,8 @@
 '''
 
  This class is a dynamic set, it stores unique elements in a list.
- It can be added or removed elements from that list and can be done
- operations related with other lists like union, intersection, difference
+ It can be added or removed elements from that set and can be done
+ operations related with other sets like union, intersection, difference
  and subset.
 
 '''
@@ -11,10 +11,10 @@ class Dynamic_Set:
 	def __init__(self, ele_list = []): # Default constructor
 		self.__element_list = ele_list
 
-	def get_list(self): # Returns the list
+	def get_list(self): # Returns the set
 		return self.__element_list
 
-	def union(self, secondary_set): # Returns the union of the list and another received one
+	def union(self, secondary_set): # Returns the union of the set and another received one
 		try:
 			aux = []
 
@@ -27,7 +27,7 @@ class Dynamic_Set:
 		except TypeError:
 			print("The operation can only be done with two sets")
 
-	def intersection(self, secondary_set): # Returns the intersection of the list and received one
+	def intersection(self, secondary_set): # Returns the intersection of the set and received one
 		try:
 			aux = []
 
@@ -40,7 +40,7 @@ class Dynamic_Set:
 		except TypeError:
 			print("The operation can only be done with two sets")
 
-	def difference(self, secondary_set): # Returns the difference of the list and received one
+	def difference(self, secondary_set): # Returns the difference of the set and received one
 		try:
 			aux = []
 
@@ -53,7 +53,7 @@ class Dynamic_Set:
 		except TypeError:
 			print("The operation can only be done with two sets")
 
-	def subset(self, secondary_set): # Returns "True" if the list is a subset of the received one, "False" if not
+	def subset(self, secondary_set): # Returns "True" if the set is a subset of the received one, "False" if not
 		try:
 			if all(x in secondary_set for x in self.__element_list):
 				return True
@@ -64,21 +64,21 @@ class Dynamic_Set:
 		except TypeError:
 			print("The operation can only be done with two sets")
 
-	def add(self, element): # Adds an element to the list
+	def add(self, element): # Adds an element to the set
 		if element in self.__element_list:
 			print("Element already on the set")
 
 		else:
 			self.__element_list.append(element)
 
-	def remove(self, element): # Removes an element of the list
+	def remove(self, element): # Removes an element of the set
 		try:
 			self.__element_list.remove(element)
 
 		except ValueError:
 			print("The element is not on the set")
 
-	def clear(self): # Erases all elements from the list
+	def clear(self): # Erases all elements from the set
 		self.__element_list.clear()
 
 def main():
