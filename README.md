@@ -1,2 +1,2 @@
 # _Python_
-(There will be one someday)
+  Here is a place where i put random stuff of python that i use for training
